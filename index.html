@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grange Ironcraft — Custom Metal Fabrication, Fermoy, Co. Cork</title>
+<meta name="description" content="Family-run custom metal fabrication since 1988. Gates, railings, clothes lines, canopies, carports and commercial fabrication in Fermoy, Co. Cork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --iron:#17181A;
+    --iron-2:#1F2225;
+    --concrete:#E7E2D8;
+    --concrete-2:#DBD5C8;
+    --ember:#C2531C;
+    --ember-bright:#DE6B2E;
+    --steel:#8B96A0;
+    --steel-dark:#4C555E;
+    --ink:#17181A;
+    --paper:#F5F2EC;
+    --line:rgba(255,255,255,0.14);
+    --line-dark:rgba(23,24,26,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-weight:600;
+    color:var(--iron);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.72rem;
+    color:var(--ember);
+    font-weight:600;
+  }
+  a{color:inherit;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- cut edge divider (signature element) ---------- */
+  .cut-edge{
+    position:relative; width:100%; height:34px; overflow:hidden;
+  }
+  .cut-edge svg{width:100%; height:100%; display:block;}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(23,24,26,0.96);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    color:var(--paper); text-decoration:none;
+  }
+  .brand-mark{
+    width:14px; height:14px; background:var(--ember);
+    clip-path:polygon(0 20%, 20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%);
+    flex-shrink:0;
+  }
+  .brand-name{
+    font-family:'Oswald', sans-serif; font-weight:600;
+    letter-spacing:0.08em; font-size:1.05rem; text-transform:uppercase;
+  }
+  .brand-name small{
+    display:block; font-family:'JetBrains Mono', monospace;
+    font-size:0.55rem; letter-spacing:0.18em; color:var(--steel);
+    font-weight:400; margin-top:2px;
+  }
+  .navlinks{display:flex; gap:28px; list-style:none;}
+  .navlinks a{
+    color:var(--concrete); text-decoration:none;
+    font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase;
+    font-weight:500; padding-bottom:4px; border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+  }
+  .navlinks a:hover{color:var(--ember-bright); border-color:var(--ember-bright);}
+  .navtoggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; min-height:92vh; display:flex; align-items:flex-end;
+    background:#000 url('images/gates_hero_candidate.jpg') center 30% / cover no-repeat;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(17,18,20,0.15) 0%, rgba(17,18,20,0.35) 45%, rgba(17,18,20,0.92) 92%);
+  }
+  .hero-inner{position:relative; z-index:2; padding-bottom:72px; width:100%;}
+  .hero .eyebrow{color:var(--ember-bright);}
+  .hero h1{
+    color:var(--paper); font-size:clamp(2.4rem, 6vw, 4.6rem);
+    line-height:1.04; margin:16px 0 22px; max-width:15ch;
+  }
+  .hero p{
+    color:var(--concrete); max-width:46ch; font-size:1.08rem; margin-bottom:30px;
+  }
+  .hero-cta{display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .btn{
+    display:inline-block; font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase; letter-spacing:0.1em; font-size:0.78rem; font-weight:600;
+    padding:15px 26px; text-decoration:none; border:1px solid transparent;
+    transition:all .2s;
+  }
+  .btn-primary{background:var(--ember); color:#fff;}
+  .btn-primary:hover{background:var(--ember-bright);}
+  .btn-ghost{border-color:var(--steel); color:var(--concrete);}
+  .btn-ghost:hover{border-color:var(--paper); color:var(--paper);}
+
+  /* ---------- about ---------- */
+  .about{background:var(--concrete); padding:96px 0 88px;}
+  .about-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+  }
+  .about h2{font-size:clamp(1.8rem,3.4vw,2.5rem); margin:14px 0 22px; max-width:14ch;}
+  .about p{color:#3a3d3f; max-width:52ch; margin-bottom:16px;}
+  .about-stats{display:flex; gap:36px; margin-top:32px;}
+  .stat b{
+    display:block; font-family:'Oswald',sans-serif; font-size:2.1rem; color:var(--iron);
+    line-height:1;
+  }
+  .stat span{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--steel-dark);
+  }
+  .about-imgs{position:relative;}
+  .about-imgs .imgpair{display:grid; grid-template-columns:1fr 1fr; gap:0;}
+  .about-imgs img{height:340px; width:100%; object-fit:cover;}
+  .about-imgs .imgpair > div:first-child img{clip-path:polygon(0 0, 100% 0, 88% 100%, 0 100%);}
+  .about-imgs .imgpair > div:last-child img{clip-path:polygon(12% 0, 100% 0, 100% 100%, 0 100%); margin-left:-14%;}
+  .about-caption{
+    font-family:'JetBrains Mono', monospace; font-size:0.66rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--steel-dark); margin-top:14px; text-align:center;
+  }
+
+  /* ---------- services shell ---------- */
+  section.service{padding:92px 0;}
+  .service.dark{background:var(--iron); color:var(--concrete);}
+  .service.dark h2{color:var(--paper);}
+  .service.dark p{color:var(--concrete);}
+  .service-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:44px;}
+  .service-head h2{font-size:clamp(1.8rem,3.6vw,2.7rem); margin-top:12px;}
+  .service-icon{
+    width:52px; height:52px; flex-shrink:0; background:var(--ember);
+    display:flex; align-items:center; justify-content:center;
+    clip-path:polygon(0 18%, 18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%);
+  }
+  .service-icon svg{width:26px; height:26px;}
+  .service-lede{max-width:64ch; margin-bottom:36px; font-size:1.04rem;}
+  .service-body{display:grid; grid-template-columns:0.85fr 1.15fr; gap:52px;}
+  .feature-list{list-style:none; display:grid; gap:12px; margin-bottom:0;}
+  .feature-list li{
+    display:flex; gap:12px; align-items:flex-start; font-size:0.98rem;
+  }
+  .feature-list li::before{
+    content:"▸"; color:var(--ember-bright); font-weight:700; flex-shrink:0; margin-top:1px;
+  }
+  .service.light .feature-list li::before{color:var(--ember);}
+  .subtypes{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;
+  }
+  .subtype-tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.06em;
+    text-transform:uppercase; padding:8px 14px; border:1px solid var(--line);
+    color:var(--concrete);
+  }
+  .service.light .subtype-tag{border-color:var(--line-dark); color:var(--steel-dark);}
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:4px;}
+  .gallery.two{grid-template-columns:repeat(2,1fr);}
+  .gcard{position:relative; overflow:hidden; aspect-ratio:4/3;}
+  .gcard img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gcard:hover img{transform:scale(1.06);}
+  .gcap{
+    position:absolute; left:0; right:0; bottom:0; padding:10px 12px 8px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.72), rgba(0,0,0,0));
+    color:#fff; font-family:'JetBrains Mono', monospace; font-size:0.66rem;
+    letter-spacing:0.05em; text-transform:uppercase; opacity:0; transform:translateY(6px);
+    transition:opacity .25s, transform .25s;
+  }
+  .gcard:hover .gcap{opacity:1; transform:translateY(0);}
+
+  /* commercial subsections */
+  .subblock{margin-bottom:56px;}
+  .subblock:last-child{margin-bottom:0;}
+  .subblock-head{display:flex; align-items:baseline; gap:14px; margin-bottom:18px;}
+  .subblock-head h3{font-size:1.15rem; color:var(--paper);}
+  .subblock-head .eyebrow{color:var(--ember-bright);}
+  .subblock p.desc{color:var(--concrete); max-width:64ch; margin-bottom:18px; font-size:0.96rem;}
+
+  /* ---------- contact / footer ---------- */
+  .contact{background:var(--iron-2); color:var(--paper); padding:88px 0 40px;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .contact h2{color:var(--paper); font-size:clamp(1.8rem,3.4vw,2.5rem); margin:14px 0 18px;}
+  .contact p{color:var(--concrete); max-width:48ch; margin-bottom:26px;}
+  .contact-detail{margin-bottom:18px;}
+  .contact-detail .eyebrow{display:block; margin-bottom:4px;}
+  .contact-detail a, .contact-detail span{font-size:1.05rem; color:var(--paper); text-decoration:none;}
+  .cform{display:grid; gap:14px;}
+  .cform input, .cform textarea{
+    width:100%; background:transparent; border:1px solid var(--line);
+    color:var(--paper); padding:14px 16px; font-family:'Source Sans 3', sans-serif;
+    font-size:0.95rem;
+  }
+  .cform input::placeholder, .cform textarea::placeholder{color:var(--steel);}
+  .cform label{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--steel); margin-bottom:-8px; display:block;
+  }
+  .cform button{
+    justify-self:start; margin-top:6px; background:var(--ember); color:#fff; border:none;
+    font-family:'JetBrains Mono', monospace; text-transform:uppercase; letter-spacing:0.1em;
+    font-size:0.78rem; font-weight:600; padding:15px 30px; cursor:pointer;
+  }
+  .cform button:hover{background:var(--ember-bright);}
+  footer{
+    border-top:1px solid var(--line); margin-top:64px; padding-top:24px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.05em;
+    color:var(--steel); text-transform:uppercase;
+  }
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .about-grid, .service-body, .contact-grid{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .about-imgs img{height:220px;}
+    .about-stats{gap:24px;}
+  }
+  @media (max-width:520px){
+    .gallery{grid-template-columns:1fr 1fr;}
+    .hero{min-height:100vh;}
+  }
+
+  :focus-visible{outline:2px solid var(--ember-bright); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name">Grange Ironcraft<small>Est. 1988 &middot; Fermoy, Co. Cork</small></span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="#gates">Gates</a></li>
+      <li><a href="#railings">Railings</a></li>
+      <li><a href="#clotheslines">Clothes Lines</a></li>
+      <li><a href="#commercial">Commercial</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Custom Metal Fabrication &middot; Fermoy, Co. Cork</span>
+    <h1>Where Innovation Meets Expert Craftsmanship</h1>
+    <p>Bespoke gates, railings, and structural fabrication built to last — designed, cut and finished by hand at our Fermoy workshop.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      <a href="#gates" class="btn btn-ghost">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<div class="cut-edge" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><polygon points="0,34 0,10 40,2 90,14 150,4 210,16 270,3 330,12 390,1 450,15 510,5 570,13 630,2 690,16 750,4 810,14 870,2 930,15 990,5 1050,13 1110,3 1170,15 1200,8 1200,34" fill="#E7E2D8"/></svg>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">Since 1988</span>
+      <h2>Three generations of Cork craftsmanship</h2>
+      <p>Established in 1988, Grange Ironcraft is a family-run business based in Fermoy, Co. Cork, specialising in custom metal fabrication for residential, retail and commercial requirements.</p>
+      <p>From one-of-a-kind pieces to complex structural solutions, our team combines innovation, precision, and expertise to create products that are built to last and designed to impress.</p>
+      <div class="about-stats">
+        <div class="stat"><b>1988</b><span>Est. in Fermoy</span></div>
+        <div class="stat"><b>3</b><span>Generations at the forge</span></div>
+        <div class="stat"><b>100%</b><span>Made to measure</span></div>
+      </div>
+    </div>
+    <div class="about-imgs">
+      <div class="imgpair">
+        <div><img src="images/gates_wrought_1.jpg" alt="Traditional wrought iron double gate with scrollwork, fabricated by Grange Ironcraft"></div>
+        <div><img src="images/gates_hero_candidate.jpg" alt="Modern sliding composite gate with laser-cut dog silhouette detail"></div>
+      </div>
+      <p class="about-caption">Traditional wrought iron &nbsp;→&nbsp; modern laser-cut detailing</p>
+    </div>
+  </div>
+</section>
+
+<div class="cut-edge" aria-hidden="true" style="transform:rotate(180deg)">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><polygon points="0,34 0,10 40,2 90,14 150,4 210,16 270,3 330,12 390,1 450,15 510,5 570,13 630,2 690,16 750,4 810,14 870,2 930,15 990,5 1050,13 1110,3 1170,15 1200,8 1200,34" fill="#17181A"/></svg>
+</div>
+
+<!-- GATES -->
+<section class="service dark" id="gates">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <span class="eyebrow">What We Do</span>
+        <h2>Gates</h2>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#17181A" stroke-width="2"><path d="M4 21V5h5v16M15 21V5h5v16M9 9h6M9 13h6M9 17h6"/></svg>
+      </div>
+    </div>
+    <p class="service-lede">Our custom-made gates are designed to enhance security while adding a distinctive finish to your property. Manufactured from high-quality materials and tailored to your exact requirements, each gate combines durability, functionality, and exceptional craftsmanship.</p>
+    <div class="service-body">
+      <div>
+        <ul class="feature-list">
+          <li>Bespoke designs tailored to your property</li>
+          <li>Wide range of styles and finishes available</li>
+          <li>Enhanced security and privacy</li>
+          <li>Durable, weather-resistant construction</li>
+          <li>Suitable for residential, commercial and industrial use</li>
+          <li>Expert craftsmanship and professional installation</li>
+          <li>Low maintenance and built for long-term performance</li>
+        </ul>
+        <div class="subtypes">
+          <span class="subtype-tag">Wrought Iron</span>
+          <span class="subtype-tag">PVC / Timber</span>
+          <span class="subtype-tag">Side Entrance</span>
+          <span class="subtype-tag">Front / Side Gate</span>
+          <span class="subtype-tag">Large Gates</span>
+          <span class="subtype-tag">Industrial Gates</span>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gcard"><img src="images/gates_4.jpg" alt="Large sliding driveway gate with laser-cut dog silhouette panels"><span class="gcap">Large sliding gate</span></div>
+        <div class="gcard"><img src="images/gates_2.jpg" alt="Dark composite side entrance gate between two houses"><span class="gcap">Side entrance gate</span></div>
+        <div class="gcard"><img src="images/gates_3.jpg" alt="Front garden gate with matching charcoal wall panels"><span class="gcap">Front garden gate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAILINGS -->
+<section class="service light" id="railings" style="background:var(--concrete);">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <span class="eyebrow" style="color:var(--ember);">What We Do</span>
+        <h2>Railings</h2>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#17181A" stroke-width="2"><path d="M3 20h18M5 20V8M9 20V8M13 20V8M17 20V8M19 20V8M4 8h16"/></svg>
+      </div>
+    </div>
+    <p class="service-lede" style="color:#3a3d3f;">Whether for homes, commercial premises, or public spaces, our railings are built to provide lasting safety and support. Using quality materials and precision fabrication, we create solutions that are as dependable as they are attractive.</p>
+    <div class="service-body">
+      <div>
+        <ul class="feature-list">
+          <li>Wrought iron detailing and finishes</li>
+          <li>Stairs, indoor and outdoor</li>
+          <li>Balconies, glazed and open styles</li>
+          <li>Decking areas and raised platforms</li>
+          <li>Precision fabrication for lasting safety</li>
+        </ul>
+        <div class="subtypes">
+          <span class="subtype-tag">Wrought Iron</span>
+          <span class="subtype-tag">Stairs</span>
+          <span class="subtype-tag">Balconies</span>
+          <span class="subtype-tag">Decking Areas</span>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gcard"><img src="images/railing_metal_2.jpg" alt="Spear-top wrought iron wall railing outside a bungalow"><span class="gcap">Wall railing</span></div>
+        <div class="gcard"><img src="images/railing_pvc_1.jpg" alt="Green composite wall-top privacy railing"><span class="gcap">Wall-top screening</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOTHES LINES -->
+<section class="service dark" id="clotheslines">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <span class="eyebrow">What We Do</span>
+        <h2>Clothes Lines</h2>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#17181A" stroke-width="2"><path d="M3 6h18M6 6v4M18 6v4M2 10h4M18 10h4M8 14l2 2M14 16l2-2M11 18v-3"/></svg>
+      </div>
+    </div>
+    <p class="service-lede">Whether you have a compact garden or a large outdoor area, we create clotheslines to suit your specific needs — a low-maintenance, cost-effective and energy-saving alternative to tumble dryers.</p>
+    <div class="service-body">
+      <div>
+        <ul class="feature-list">
+          <li>Custom-built to fit your available space</li>
+          <li>Strong, durable, and weather-resistant</li>
+          <li>Cost-effective and energy-saving alternative to tumble dryers</li>
+          <li>Low-maintenance design</li>
+          <li>Easy self-installation, or professional fitting available</li>
+          <li>Nationwide delivery for T-shape clotheslines (self-install)</li>
+        </ul>
+        <div class="subtypes">
+          <span class="subtype-tag">T-Shape</span>
+          <span class="subtype-tag">Wall Mounted</span>
+          <span class="subtype-tag">Mobile</span>
+        </div>
+      </div>
+      <div class="gallery two">
+        <div class="gcard"><img src="images/clothesline_1.jpg" alt="Galvanised T-shape clothesline pole installed in a garden"><span class="gcap">T-shape line</span></div>
+        <div class="gcard"><img src="images/clothesline_mobile_1.jpg" alt="Mobile rolling clothesline unit on wheels"><span class="gcap">Mobile clothes line</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL -->
+<section class="service light" id="commercial" style="background:var(--concrete);">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <span class="eyebrow" style="color:var(--ember);">What We Do</span>
+        <h2>Commercial &amp; Custom Fabrication</h2>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#17181A" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>
+      </div>
+    </div>
+    <p class="service-lede" style="color:#3a3d3f; margin-bottom:52px;">Whether you're developing a retail outlet, office, hospitality venue, or industrial facility, we design and manufacture bespoke metal solutions tailored to your project's unique requirements.</p>
+
+    <div class="subblock">
+      <div class="subblock-head"><h3 style="color:var(--iron);">Canopies &amp; Pergolas</h3><span class="eyebrow" style="color:var(--ember);">Weather-resistant &amp; built to last</span></div>
+      <p class="desc" style="color:#3a3d3f;">Built with high-quality, weather-resistant materials designed to withstand the elements while enhancing the look and value of your property, in a range of styles, colours, and custom options.</p>
+      <div class="gallery two">
+        <div class="gcard"><img src="images/canopy_1.jpg" alt="Lean-to polycarbonate canopy over a side walkway"><span class="gcap">Walkway canopy</span></div>
+        <div class="gcard"><img src="images/railing_metal_1.jpg" alt="Retractable canvas pergola with glass balustrade decking"><span class="gcap">Retractable pergola &amp; decking</span></div>
+      </div>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-head"><h3 style="color:var(--iron);">Carports &amp; Camper Ports</h3><span class="eyebrow" style="color:var(--ember);">Protect your investment</span></div>
+      <p class="desc" style="color:#3a3d3f;">Your vehicle is one of your biggest investments — give it the protection it deserves. Designed to shield your car from harsh sun, heavy rain, hail, and falling debris, preserving its appearance and reducing long-term wear.</p>
+      <div class="gallery two">
+        <div class="gcard"><img src="images/canopy_2.jpg" alt="White carport structure sheltering a red car"><span class="gcap">Carport</span></div>
+        <div class="gcard"><img src="images/carport_1.jpg" alt="Polycarbonate carport canopy attached to bungalow"><span class="gcap">Carport canopy</span></div>
+      </div>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-head"><h3 style="color:var(--iron);">Garden &amp; Bin Storage</h3><span class="eyebrow" style="color:var(--ember);">Neat, secure, weatherproof</span></div>
+      <p class="desc" style="color:#3a3d3f;">Keep your outdoor space organised and ready for every season. Bins, tools, bicycles, cushions or toys — our storage units provide a secure, weather-resistant place for everything, with easy access and smart use of space.</p>
+      <div class="gallery">
+        <div class="gcard"><img src="images/garden_storage_1.jpg" alt="Steel-framed timber bin storage enclosure"><span class="gcap">Bin storage enclosure</span></div>
+        <div class="gcard"><img src="images/garden_storage_2.jpg" alt="Timber-clad steel garden storage unit"><span class="gcap">Garden storage unit</span></div>
+        <div class="gcard"><img src="images/bike_storage_1.jpg" alt="Commercial bike storage shelter"><span class="gcap">Bike storage shelter</span></div>
+      </div>
+    </div>
+
+    <div class="subblock">
+      <div class="subblock-head"><h3 style="color:var(--iron);">Retail &amp; Fit-Outs</h3><span class="eyebrow" style="color:var(--ember);">Bespoke by design</span></div>
+      <p class="desc" style="color:#3a3d3f;">Custom steel-framed fixtures and fittings, designed and built to match the space — from shopfloor shelving to structural fit-out work.</p>
+      <div class="gallery two">
+        <div class="gcard"><img src="images/misc_2.jpg" alt="Custom steel-framed retail shelving unit"><span class="gcap">Retail shelving</span></div>
+        <div class="gcard"><img src="images/gates_wrought_1.jpg" alt="Grange Ironcraft delivery truck at the workshop"><span class="gcap">From our workshop in Fermoy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's build something that lasts</h2>
+      <p>Tell us about your project — a gate, a railing, a carport, or something entirely bespoke — and we'll get back to you with a quote.</p>
+      <div class="contact-detail">
+        <span class="eyebrow">Workshop</span>
+        <span>Fermoy, Co. Cork, Ireland</span>
+      </div>
+      <div class="contact-detail">
+        <span class="eyebrow">Phone</span>
+        <a href="tel:+353000000000">[ add phone number ]</a>
+      </div>
+      <div class="contact-detail">
+        <span class="eyebrow">Email</span>
+        <a href="mailto:info@grangeironcraft.ie">[ add email address ]</a>
+      </div>
+    </div>
+    <form class="cform" onsubmit="event.preventDefault(); window.location.href='mailto:info@grangeironcraft.ie?subject=Website enquiry from ' + encodeURIComponent(document.getElementById('cf-name').value) + '&body=' + encodeURIComponent(document.getElementById('cf-message').value + ' \n\nFrom: ' + document.getElementById('cf-name').value + ' (' + document.getElementById('cf-email').value + ')');">
+      <label for="cf-name">Name</label>
+      <input id="cf-name" type="text" placeholder="Your name" required>
+      <label for="cf-email">Email</label>
+      <input id="cf-email" type="email" placeholder="you@example.com" required>
+      <label for="cf-message">Project details</label>
+      <textarea id="cf-message" rows="5" placeholder="Tell us what you're looking to have made..." required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+  <div class="wrap">
+    <footer>
+      <span>&copy; 2026 Grange Ironcraft Ltd &middot; Fermoy, Co. Cork</span>
+      <span>Est. 1988 &middot; Family Run</span>
+    </footer>
+  </div>
+</section>
+
+</body>
+</html>
