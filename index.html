@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grange Ironcraft — Custom Metal Fabrication, Fermoy, Co. Cork</title>
+<meta name="description" content="Family-run custom metal fabrication since 1988. Gates, railings, clothes lines, canopies, carports and commercial fabrication in Fermoy, Co. Cork.">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --iron:#010536;
+    --iron-2:#0A1150;
+    --concrete:#EDEDF2;
+    --concrete-2:#E2E2E9;
+    --ember:#FFFF00;
+    --ember-bright:#FFF680;
+    --gold:#8A6D00;
+    --steel:#8891A8;
+    --steel-dark:#4A5170;
+    --ink:#010536;
+    --paper:#FFFFFF;
+    --line:rgba(255,255,255,0.14);
+    --line-dark:rgba(1,5,54,0.14);
+    --brand-navy:#010536;
+    --brand-yellow:#FFFF00;
+    --brand-white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Oswald', sans-serif;
+    letter-spacing:0.03em;
+    font-weight:600;
+    color:var(--iron);
+  }
+
+  h1 {
+    text-transform:uppercase;
+  }
+
+  #gates .service-head h2{text-transform:uppercase; margin-top:0; line-height:1.1;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+   text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.72rem;
+    color:var(--ember);
+    font-weight:600;
+  }
+  a{color:inherit;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- cut edge divider (signature element) ---------- */
+  .cut-edge{
+    position:relative; width:100%; height:34px; overflow:hidden;
+  }
+  .cut-edge svg{width:100%; height:100%; display:block;}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(1,5,54,0.97);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:10px; padding-bottom:10px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    color:var(--paper); text-decoration:none;
+  }
+  .brand-logo{
+    height:36px; width:auto; display:block; flex-shrink:0;
+  }
+  .brand-name{
+    font-family:'Oswald', sans-serif; font-weight:600;
+    letter-spacing:0.08em; font-size:1.05rem; text-transform:uppercase;
+  }
+  .brand-name small{
+    display:block; font-family:'JetBrains Mono', monospace;
+    font-size:0.55rem; letter-spacing:0.18em; color:var(--steel);
+    font-weight:400; margin-top:2px;
+  }
+  .navlinks{display:flex; gap:22px; list-style:none; flex-wrap:nowrap;}
+  .navlinks li{flex-shrink:0;}
+  .navlinks a{
+    color:var(--concrete); text-decoration:none;
+    font-size:0.8rem; letter-spacing:0.04em; text-transform:uppercase;
+    font-weight:500; padding-bottom:4px; border-bottom:2px solid transparent;
+    transition:border-color .2s, color .2s;
+    white-space:nowrap;
+  }
+  .navlinks a:hover{color:var(--brand-yellow); border-color:var(--brand-yellow);}
+  .nav-phone{
+    display:inline-flex !important; align-items:center; gap:8px;
+    color:var(--iron) !important; background:var(--ember);
+    padding:9px 16px; border-radius:2px; border-bottom:none !important;
+    font-weight:600; white-space:nowrap; flex-shrink:0;
+  }
+  .nav-phone::before{
+    content:""; width:14px; height:14px; flex-shrink:0;
+    background:var(--iron);
+    -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>') center/contain no-repeat;
+    mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>') center/contain no-repeat;
+  }
+  .nav-phone:hover{background:var(--ember-bright); color:var(--iron) !important;}
+  .nav-phone-mobile{
+    display:none; align-items:center; justify-content:center;
+    width:38px; height:38px; background:var(--ember); color:var(--iron);
+    flex-shrink:0; border-radius:2px;
+  }
+  .nav-phone-mobile svg{width:18px; height:18px;}
+  .navtoggle{
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:38px; height:38px; background:none; border:none; cursor:pointer;
+    padding:0; flex-shrink:0;
+  }
+  .navtoggle span{
+    display:block; width:100%; height:2px; background:var(--paper);
+    transition:transform .25s, opacity .2s;
+  }
+  .navtoggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .navtoggle.open span:nth-child(2){opacity:0;}
+  .navtoggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; min-height:92vh; display:flex; align-items:flex-end;
+    background:#000 url('images/gates-hero-desktop.webp') center 30% / cover no-repeat;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(1,5,54,0.12) 0%, rgba(1,5,54,0.15) 45%, rgba(1,5,54,0.15) 92%);
+  }
+  .hero-inner{position:relative; z-index:2; padding-bottom:72px; width:100%;}
+  .hero .eyebrow{color:var(--ember-bright);}
+  .about .eyebrow{color:var(--ember-bright);}
+  .hero h1{
+    color:var(--paper); font-size:clamp(2.4rem, 6vw, 4.6rem);
+    line-height:1.04; margin:16px 0 22px; max-width:15ch;
+  }
+  .hero p{
+    color:var(--concrete); max-width:46ch; font-size:1.08rem; margin-bottom:30px;
+  }
+  .hero-cta{display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+
+  /* ---------- product carousel strip ---------- */
+  .strip-heading{
+    background:var(--concrete); padding:24px 56px 0;
+  }
+  .product-strip{
+    position:relative;
+    background:var(--concrete);
+    padding:20px 56px; display:flex; align-items:center;
+  }
+  .product-strip > *{position:relative; z-index:1;}
+  .strip-track{
+    display:flex; gap:10px; width:100%;
+    overflow-x:auto; scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+    scroll-behavior:smooth;
+  }
+  .strip-track::-webkit-scrollbar{display:none;}
+  .strip-track a{
+    position:relative; flex:0 0 220px; aspect-ratio:4/3; overflow:hidden;
+    display:flex; align-items:flex-end; scroll-snap-align:start;
+    background-size:cover; background-position:center;
+    text-decoration:none; border-radius:8px;
+  }
+  .strip-track a::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(30,33,38,0.72) 0%, rgba(30,33,38,0.1) 50%, rgba(30,33,38,0) 100%);
+    transition:background .2s;
+  }
+  .strip-track a span{
+    position:relative; z-index:1; width:100%; padding:12px 14px;
+    color:var(--paper); font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:700;
+    text-shadow:0 1px 4px rgba(0,0,0,0.5);
+  }
+  .strip-track a:hover::before,
+  .strip-track a:active::before{
+    background:linear-gradient(0deg, rgba(30,33,38,0.8) 0%, rgba(60,65,72,0.4) 60%, rgba(60,65,72,0.2) 100%);
+  }
+  .strip-arrow{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+    width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.18); cursor:pointer;
+    background:#151a45; color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s;
+  }
+  .strip-arrow:hover{background:#232a63;}
+  .strip-arrow svg{width:22px; height:22px;}
+  .strip-prev{left:10px;}
+  .strip-next{right:10px;}
+  @media (max-width:860px){
+    .product-strip{padding:16px 12px;}
+    .strip-arrow{display:none;}
+    .strip-track a{flex:0 0 42%;}
+    .strip-track a span{font-size:0.62rem; padding:8px 10px;}
+  }
+  .btn{
+    display:inline-block; font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase; letter-spacing:0.1em; font-size:0.78rem; font-weight:600;
+    padding:15px 26px; text-decoration:none; border:1px solid transparent;
+    border-radius:8px;
+    transition:all .2s;
+  }
+  .btn-primary{background:var(--ember); color:var(--iron);}
+  .btn-primary:hover{background:var(--ember-bright);}
+  .btn-ghost{border-color:var(--steel); color:var(--concrete);}
+  .btn-ghost:hover{border-color:var(--paper); color:var(--paper);}
+
+  /* ---------- about ---------- */
+  .about{
+    position:relative; min-height:420px; display:flex; align-items:flex-end;
+    background:#000 url('images/two_generations.jpg') center 32% / cover no-repeat;
+  }
+  .about::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(1,5,54,0.94) 0%, rgba(1,5,54,0.8) 32%, rgba(1,5,54,0.35) 62%, rgba(1,5,54,0.08) 100%);
+  }
+  .about::after{
+    content:""; position:absolute; inset:0; mix-blend-mode:overlay;
+    background:linear-gradient(135deg, rgba(255,106,0,0.4) 0%, rgba(255,176,40,0.12) 55%, rgba(255,60,0,0.22) 100%);
+  }
+  .about-content{position:relative; z-index:2; padding:48px 0; max-width:620px;}
+  .about-content h2{font-size:clamp(1.7rem,3vw,2.4rem); margin:6px 0 14px; max-width:16ch; color:var(--paper);}
+  .about-content p{color:var(--concrete); max-width:52ch; margin-bottom:22px; font-size:0.98rem; line-height:1.55;}
+  .about-stats{display:flex; gap:28px;}
+  .stat b{
+    display:block; font-family:'Oswald',sans-serif; font-size:2.1rem; color:var(--paper);
+    line-height:1;
+  }
+  .stat span{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--steel);
+  }
+  .about-caption{
+    font-family:'JetBrains Mono', monospace; font-size:0.66rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--steel); margin-top:14px; text-align:center;
+  }
+
+  /* ---------- services shell ---------- */
+  section.service{padding:26px 0 30px; scroll-margin-top:60px;}
+  .service.dark{background:var(--iron); color:var(--concrete);}
+  .service.dark h2{color:var(--paper);}
+  .service.dark p{color:var(--concrete);}
+  .service-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:44px;}
+  .service-head h2{font-size:clamp(1.8rem,3.6vw,2.7rem); margin-top:12px;}
+  .service-icon{
+    width:52px; height:52px; flex-shrink:0; background:var(--ember);
+    display:flex; align-items:center; justify-content:center;
+    clip-path:polygon(0 18%, 18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%);
+  }
+  .service-icon svg{width:26px; height:26px;}
+  .service-lede{max-width:64ch; margin-bottom:36px; font-size:1.04rem;}
+  .service-body{display:grid; grid-template-columns:0.85fr 1.15fr; gap:52px;}
+  .feature-list{list-style:none; display:grid; gap:12px; margin-bottom:0;}
+  .feature-list li{
+    display:flex; gap:12px; align-items:flex-start; font-size:0.98rem;
+  }
+  .feature-list li::before{
+    content:"▸"; color:var(--ember-bright); font-weight:700; flex-shrink:0; margin-top:1px;
+  }
+  .service.light .feature-list li::before{color:var(--gold);}
+  .subtypes{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;
+  }
+  .subtype-tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.06em;
+    text-transform:uppercase; padding:8px 14px; border:1px solid var(--line);
+    color:var(--concrete);
+  }
+  .service.light .subtype-tag{border-color:var(--line-dark); color:var(--steel-dark);}
+  #home-solutions .subtype-tag{
+    font-family:'Source Sans 3', sans-serif; font-size:0.78rem; letter-spacing:0.01em;
+    text-transform:none; padding:6px 14px; border-radius:100px; font-weight:600;
+  }
+  .subhead{font-size:1.1rem; margin-bottom:14px; color:var(--iron);}
+  .service.dark .subhead{color:var(--paper);}
+  .subhead-desc{font-size:0.96rem; margin-bottom:18px; color:#3a3d3f; max-width:60ch;}
+  .service.dark .subhead-desc{color:var(--concrete);}
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:4px;}
+
+  /* ---------- gates: reimagined showcase ---------- */
+  #gates.service{scroll-margin-top:72px;}
+  #gates .service-head{margin-bottom:0;}
+  #gates .eyebrow{line-height:1;}
+  .gates-intro-text{max-width:none; margin:10px 0 0; font-size:0.98rem; line-height:1.55;}
+  #gates .gates-intro-text{color:#3a3d3f;}
+  #gates .gates-showcase{margin-top:22px;}
+
+
+  /* ---------- railings: matching gates showcase pattern ---------- */
+  #railings .service-head{margin-bottom:0;}
+  #commercial .service-head{margin-bottom:0;}
+  #railings .service-head h2{margin-top:0; line-height:1.1;}
+  #railings .gates-showcase{margin-top:22px;}
+  #railings .desc{color:var(--concrete);}
+  .railings-subtypes-quiet{margin-top:20px;}
+  .railings-subtypes-quiet .subhead{font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px;}
+  .subtypes-quiet{display:flex; flex-wrap:wrap; gap:14px;}
+  .subtypes-quiet span{font-size:0.82rem; font-weight:400;}
+  #railings .railings-subtypes-quiet .subhead, #railings .subtypes-quiet span{color:var(--steel);}
+  #gates .railings-subtypes-quiet .subhead, #gates .subtypes-quiet span{color:var(--steel-dark);}
+
+  /* ---------- outdoor structures: tighten top spacing ---------- */
+  #outdoor-structures.service, #home-solutions.service{padding:26px 0 30px;}
+  #outdoor-structures .service-head, #home-solutions .service-head{margin-bottom:0;}
+  #outdoor-structures .service-head h2, #home-solutions .service-head h2{margin-top:0; line-height:1.1;}
+  #outdoor-structures .eyebrow, #home-solutions .eyebrow{line-height:1;}
+  #outdoor-structures .outdoor-intro, #home-solutions .outdoor-intro{margin-top:16px; margin-bottom:8px;}
+  @media (min-width:861px){
+    .os-block{
+      display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center;
+    }
+    .os-block .os-text{grid-column:1; grid-row:1;}
+    .os-block .gallery{grid-column:2; grid-row:1;}
+    /* alternate: flipped blocks put images on the left */
+    .os-block.os-flip .os-text{grid-column:2;}
+    .os-block.os-flip .gallery{grid-column:1;}
+    .os-block .desc{margin-bottom:0;}
+  }
+  .gallery.two{grid-template-columns:repeat(2,1fr);}
+  .gallery.one{grid-template-columns:1fr; max-width:420px;}
+  .gcard{position:relative; overflow:hidden; aspect-ratio:4/3; cursor:pointer;}
+  .gcard img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gcard:hover img{transform:scale(1.06);}
+  .gcap{
+    position:absolute; left:0; right:0; bottom:0; padding:10px 12px 8px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.72), rgba(0,0,0,0));
+    color:#fff; font-family:'JetBrains Mono', monospace; font-size:0.66rem;
+    letter-spacing:0.05em; text-transform:uppercase; opacity:0; transform:translateY(6px);
+    transition:opacity .25s, transform .25s;
+  }
+  .gcard:hover .gcap{opacity:1; transform:translateY(0);}
+
+  /* ---------- refreshed gallery treatment: outdoor structures & home solutions ---------- */
+  #outdoor-structures .gcard, #home-solutions .gcard{
+    aspect-ratio:auto; overflow:visible; display:flex; flex-direction:column; gap:10px;
+  }
+  #outdoor-structures .gph, #home-solutions .gph{
+    aspect-ratio:4/3; overflow:hidden; border-radius:16px;
+  }
+  #outdoor-structures .gph img, #home-solutions .gph img{
+    width:100%; height:100%; object-fit:cover; transition:transform .5s ease;
+  }
+  #outdoor-structures .gcard:hover .gph img, #home-solutions .gcard:hover .gph img{transform:scale(1.05);}
+  #outdoor-structures .gcap, #home-solutions .gcap{
+    position:static; opacity:1; transform:none; background:none; padding:0 2px;
+    font-family:'Source Sans 3', sans-serif; font-size:0.88rem; font-weight:600;
+    letter-spacing:0; text-transform:none;
+  }
+  #outdoor-structures .gcap{color:var(--steel-dark);}
+  #home-solutions .gcap{color:var(--concrete);}
+
+  /* ---------- outdoor structures: stacked showcase ---------- */
+  .showcase-intro{color:#3a3d3f; max-width:none; white-space:nowrap; margin-top:8px; font-size:0.98rem; line-height:1.5;}
+  .showcase-tabs{display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 6px;}
+  .showcase-tab{
+    display:inline-block; font-family:'Source Sans 3', sans-serif; font-weight:600; font-size:0.82rem;
+    padding:8px 18px; border-radius:100px; border:1px solid var(--line-dark);
+    background:transparent; color:var(--steel-dark); text-decoration:none;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .showcase-tab:hover{border-color:var(--ember); color:var(--iron); background:var(--ember);}
+  .showcase-tab-dark{border-color:var(--line); color:var(--steel);}
+  .showcase-tab-dark:hover{border-color:var(--ember); color:var(--iron); background:var(--ember);}
+
+  .showcase-panel{
+    display:grid; grid-template-columns:1fr 1.15fr; gap:44px; align-items:start;
+    scroll-margin-top:100px; padding:18px 0;
+  }
+  .showcase-panel + .showcase-panel{border-top:1px solid var(--line-dark); padding-top:36px;}
+  .showcase-hidden-gallery{display:none !important;}
+
+  .showcase-photo{position:relative; border-radius:20px; overflow:hidden; aspect-ratio:4/3; max-width:380px; box-shadow:0 20px 50px rgba(1,5,54,0.15);}
+  .showcase-photo img{width:100%; height:100%; object-fit:cover; cursor:pointer; transition:transform .4s ease; display:block;}
+  .showcase-photo:hover img{transform:scale(1.02);}
+
+  .showcase-copy{display:flex; flex-direction:column; padding-top:6px;}
+  .showcase-title{font-size:1.4rem; margin-bottom:6px;}
+  .showcase-copy .eyebrow{margin-bottom:10px; display:block;}
+  .showcase-copy .desc{margin-bottom:22px;}
+
+  .showcase-thumbs{display:flex; gap:10px; flex-wrap:wrap;}
+  .sthumb{
+    width:64px; height:64px; border-radius:10px; overflow:hidden; border:2px solid transparent;
+    padding:0; cursor:pointer; background:none; opacity:0.55; flex-shrink:0;
+    transition:opacity .15s ease, border-color .15s ease;
+  }
+  .sthumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .sthumb.active, .sthumb:hover{opacity:1; border-color:var(--gold);}
+
+  /* ---------- lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; z-index:200; display:none;
+    align-items:center; justify-content:center;
+    background:rgba(1,5,54,0.94); padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-inner{position:relative; max-width:min(1100px, 92vw); max-height:88vh;}
+  .lightbox-inner img{
+    display:block; max-width:100%; max-height:88vh; width:auto; height:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-cap{
+    color:var(--paper); font-family:'JetBrains Mono', monospace; font-size:0.72rem;
+    letter-spacing:0.06em; text-transform:uppercase; text-align:center; margin-top:14px;
+  }
+  .lightbox-close{
+    position:absolute; top:-46px; right:0; background:none; border:none; cursor:pointer;
+    color:var(--paper); width:36px; height:36px; padding:0;
+  }
+  .lightbox-close svg{width:100%; height:100%;}
+  .lightbox-close:hover{color:var(--ember);}
+  .lightbox-nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:rgba(1,5,54,0.55); border:none; cursor:pointer;
+    color:var(--paper); width:48px; height:48px; padding:10px;
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s, color .2s;
+  }
+  .lightbox-nav:hover{background:rgba(1,5,54,0.85); color:var(--ember);}
+  .lightbox-nav svg{width:100%; height:100%;}
+  .lightbox-prev{left:-64px;}
+  .lightbox-next{right:-64px;}
+  @media (max-width:900px){
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
+  }
+  @media (max-width:600px){
+    .lightbox{padding:20px;}
+    .lightbox-close{top:-40px; right:0; width:30px; height:30px;}
+  }
+
+  /* commercial subsections */
+  .subblock{margin-bottom:44px;}
+  .subblock:last-child{margin-bottom:0;}
+  .subblock-head{display:flex; align-items:baseline; gap:14px; margin-bottom:18px;}
+  .subblock-head h3{font-size:1.15rem; color:var(--paper);}
+  .subblock-head .eyebrow{color:var(--ember-bright);}
+  .subblock p.desc{color:var(--concrete); max-width:64ch; margin-bottom:18px; font-size:0.96rem;}
+
+  .outdoor-intro{margin-bottom:32px;}
+  .outdoor-chips{display:flex; flex-wrap:wrap; gap:12px; margin-top:0;}
+  .outdoor-chip{
+    display:inline-block; font-family:'Source Sans 3', sans-serif; font-size:0.85rem;
+    letter-spacing:0.01em; font-weight:700;
+    padding:10px 22px; border:none; text-decoration:none; border-radius:100px;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+    background:var(--ember); color:var(--iron);
+    box-shadow:0 2px 10px rgba(1,5,54,0.15);
+  }
+  .outdoor-chip:hover{transform:translateY(-1px); box-shadow:0 4px 16px rgba(1,5,54,0.22); background:var(--ember-bright);}
+  .service.light .outdoor-chip{
+    background:var(--paper); color:var(--iron);
+    box-shadow:0 2px 8px rgba(1,5,54,0.1); border:1px solid var(--line-dark);
+  }
+  .service.light .outdoor-chip:hover{background:var(--ember); border-color:var(--ember); box-shadow:0 4px 14px rgba(1,5,54,0.15);}
+
+  /* ---------- contact / footer ---------- */
+  .contact{background:var(--concrete); color:var(--iron); padding:26px 0;}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;}
+  .contact h2{color:var(--iron); font-size:clamp(1.8rem,3.4vw,2.5rem); margin:14px 0 18px;}
+  .contact p{color:#3a3d3f; max-width:48ch; margin-bottom:28px;}
+  .contact-detail{display:flex; align-items:center; gap:14px; margin-bottom:16px;}
+  .contact-detail svg{width:20px; height:20px; flex-shrink:0; color:var(--gold);}
+  .contact-detail a, .contact-detail span{font-size:1.02rem; color:var(--iron); text-decoration:none;}
+  .contact-detail a:hover{color:var(--gold);}
+  .social-links{display:flex; gap:12px; margin-top:24px;}
+  .social-links a{
+    width:44px; height:44px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+    background:var(--paper); border:1px solid var(--line-dark); color:var(--iron);
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .social-links a svg{width:19px; height:19px;}
+  .social-links a:hover{background:var(--ember); border-color:var(--ember); color:var(--iron);}
+  .cform{
+    display:grid; gap:14px; background:var(--paper); border-radius:18px; padding:36px;
+    box-shadow:0 20px 50px rgba(1,5,54,0.1); border:1px solid var(--line-dark);
+  }
+  .cform input, .cform textarea{
+    width:100%; background:var(--concrete); border:1px solid var(--line-dark); border-radius:10px;
+    color:var(--iron); padding:14px 16px; font-family:'Source Sans 3', sans-serif;
+    font-size:0.95rem; transition:border-color .2s ease;
+  }
+  .cform input:focus, .cform textarea:focus{outline:none; border-color:var(--gold);}
+  .cform input::placeholder, .cform textarea::placeholder{color:var(--steel-dark);}
+  .cform label{
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--steel-dark); margin-bottom:-8px; display:block;
+  }
+  .cform button{
+    justify-self:start; margin-top:6px; background:var(--ember); color:var(--iron); border:none;
+    font-family:'JetBrains Mono', monospace; text-transform:uppercase; letter-spacing:0.1em;
+    font-size:0.78rem; font-weight:600; padding:15px 30px; cursor:pointer; border-radius:8px;
+  }
+  .cform button:hover{background:var(--ember-bright);}
+  .site-footer{background:var(--iron); padding:28px 0;}
+  footer{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:'JetBrains Mono', monospace; font-size:0.68rem; letter-spacing:0.05em;
+    color:var(--steel); text-transform:uppercase;
+  }
+
+  @media (max-width:860px){
+    .navtoggle{display:flex;}
+    .nav-phone-mobile{display:flex;}
+    .navlinks li.nav-phone-item{display:none;}
+    .navlinks{
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; top:100%; left:0; right:0;
+      background:rgba(1,5,54,0.98);
+      max-height:0; overflow:hidden;
+      transition:max-height .3s ease;
+      border-bottom:1px solid var(--line);
+    }
+    .navlinks.open{max-height:400px;}
+    .navlinks li{width:100%;}
+    .navlinks a{
+      display:block; padding:16px 28px; border-bottom:1px solid var(--line);
+      border-left:2px solid transparent; margin:0;
+    }
+    .navlinks a:hover{border-left-color:var(--brand-yellow); border-bottom-color:var(--line);}
+    nav.wrap{position:relative;}
+    .service-body, .contact-grid{grid-template-columns:1fr;}
+    .showcase-panel{grid-template-columns:1fr;}
+    .showcase-intro{white-space:normal;}
+    .showcase-photo{aspect-ratio:16/11;}
+    .contact-grid{gap:28px;}
+    .social-links{margin-top:16px;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .about{min-height:320px; background-position:center 22%;}
+    .about-content{padding:32px 0;}
+    .about-stats{gap:20px; flex-wrap:wrap;}
+    .outdoor-chips{gap:8px;}
+    .outdoor-chip{padding:8px 14px; font-size:0.68rem;}
+    section.hero{
+      background-image:url('images/gates-hero-mobile.webp') !important;
+      background-color:var(--iron) !important;
+      background-size:cover !important;
+      background-position:center center !important;
+    }
+    /* mobile hero */
+    .hero-eyebrow{display:none;}
+    .hero-cta{width:auto;}
+    .hero-cta .btn{
+      width:auto; padding:10px 18px; font-size:0.68rem;
+    }
+  }
+  @media (max-width:520px){
+    .gallery{grid-template-columns:1fr 1fr;}
+    .hero{min-height:72vh; align-items:center;}
+    .hero-inner{padding-bottom:0; padding-top:24px;}
+  }
+
+  :focus-visible{outline:2px solid var(--ember-bright); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'}); history.replaceState(null,'',location.pathname); return false;">
+      <img src="images/grange_logo.png" alt="Grange Ironcraft" class="brand-logo">
+    </a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#gates">Gates &amp; Railings</a></li>
+      <li><a href="#outdoor-structures">Outdoor Structures</a></li>
+      <li><a href="#home-solutions">Home Solutions</a></li>
+      <li><a href="#commercial">Commercial</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="nav-phone-item"><a href="tel:+353831376710" class="nav-phone">Call: 083 137 6710</a></li>
+    </ul>
+    <a href="tel:+353831376710" class="nav-phone-mobile" aria-label="Call Grange Ironcraft">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="eyebrow hero-eyebrow">Custom Metal Fabrication &middot; Fermoy, Co. Cork</span>
+    <h1>Where Innovation Meets Expert Craftsmanship</h1>
+    <p>Bespoke gates, railings, and structural fabrication built to last — designed, cut and finished by hand at our Fermoy workshop.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary hero-quote">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT CAROUSEL -->
+<div class="strip-heading"><span class="eyebrow" style="color:var(--gold);">What We Do</span></div>
+<section class="product-strip" aria-label="Our products">
+  <button class="strip-arrow strip-prev" id="stripPrev" aria-label="Scroll left">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <div class="strip-track" id="stripTrack">
+    <a href="#gates" style="background-image:url('images/gates_ornate_double.jpg')"><span>Gates</span></a>
+    <a href="#railings" style="background-image:url('images/railing_metal_4.jpg')"><span>Railings</span></a>
+    <a href="#canopies" style="background-image:url('images/carport_1.jpg')"><span>Canopies</span></a>
+    <a href="#pergolas" style="background-image:url('images/pergola_1.jpg')"><span>Pergolas</span></a>
+    <a href="#carports" style="background-image:url('images/carport_car_2.jpg')"><span>Carports</span></a>
+    <a href="#clotheslines" style="background-image:url('images/clothesline_two_tier_mobile.jpg')"><span>Clothes Lines</span></a>
+    <a href="#garden-storage" style="background-image:url('images/garden_storage_2.jpg')"><span>Bin Storage</span></a>
+    <a href="#commercial" style="background-image:url('images/commercial_deli_display.jpg')"><span>Commercial</span></a>
+  </div>
+  <button class="strip-arrow strip-next" id="stripNext" aria-label="Scroll right">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</section>
+
+<!-- GATES -->
+<section class="service light" id="gates" style="background:var(--concrete);">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <h2>Gates</h2>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#010536" stroke-width="2"><path d="M4 21V5h5v16M15 21V5h5v16M9 9h6M9 13h6M9 17h6"/></svg>
+      </div>
+    </div>
+    <p class="gates-intro-text">Our custom-made gates combine security, durability and exceptional craftsmanship with a distinctive finish tailored to your property. Made from high-quality, weather-resistant materials, they're suitable for residential, commercial and industrial use, with professional installation available.</p>
+
+    <div class="showcase-panel gates-showcase">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/gates4.jpg" alt="Large sliding driveway gate with laser-cut dog silhouette panels">
+      </div>
+      <div class="showcase-copy">
+        <span class="eyebrow" style="color:var(--gold);">Security, durability &amp; craftsmanship</span>
+        <p class="desc" style="color:#3a3d3f;">Custom-made gates with a distinctive finish tailored to your property, built from high-quality, weather-resistant materials for residential, commercial and industrial use. From driveway and pedestrian gates to sliding and automated systems, professional installation is available throughout.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/gates4.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/gates_ornate_double.jpg" alt=""></button>
+          <button class="sthumb" data-idx="2"><img src="images/gates-hero-desktop.webp" alt=""></button>
+          <button class="sthumb" data-idx="3"><img src="images/gates_6.jpg" alt=""></button>
+          <button class="sthumb" data-idx="4"><img src="images/gates_8.jpg" alt=""></button>
+          <button class="sthumb" data-idx="5"><img src="images/gates_3.jpg" alt=""></button>
+          <button class="sthumb" data-idx="6"><img src="images/gates_2.jpg" alt=""></button>
+          <button class="sthumb" data-idx="7"><img src="images/gates_7.jpg" alt=""></button>
+          <button class="sthumb" data-idx="8"><img src="images/gates_9.jpg" alt=""></button>
+          <button class="sthumb" data-idx="9"><img src="images/gates_10.jpg" alt=""></button>
+          <button class="sthumb" data-idx="10"><img src="images/gates_side_dark_composite.jpg" alt=""></button>
+          <button class="sthumb" data-idx="11"><img src="images/gates_wrought_1.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/gates4.jpg" alt="Large sliding driveway gate with laser-cut dog silhouette panels"></div><span class="gcap">Large sliding gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_ornate_double.jpg" alt="Ornate wrought iron double driveway gate with circle scrollwork and spear finials"></div><span class="gcap">Ornate double driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates-hero-desktop.webp" alt="Featured driveway gate installation, as shown in the homepage hero image"></div><span class="gcap">Curved driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_6.jpg" alt="Composite double gate with ornamental wrought iron scroll cresting"></div><span class="gcap">Scroll-top double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_8.jpg" alt="Anthracite composite side gate in a narrow passage between houses"></div><span class="gcap">Side pedestrian gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_3.jpg" alt="Front garden gate with matching charcoal wall panels"></div><span class="gcap">Front garden gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_2.jpg" alt="Dark composite side entrance gate between two houses"></div><span class="gcap">Side entrance gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_7.jpg" alt="Teal composite sliding gate set between stone pillars"></div><span class="gcap">Teal driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_9.jpg" alt="Dark grey composite sliding gate on a paved driveway"></div><span class="gcap">Sliding driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_10.jpg" alt="Navy composite double gate in a side passage"></div><span class="gcap">Navy side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_side_dark_composite.jpg" alt="Dark composite side gate in a narrow passage against a pebble-dash wall"></div><span class="gcap">Side passage gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_wrought_1.jpg" alt="Grange Ironcraft delivery truck at the workshop"></div><span class="gcap">From our workshop in Fermoy</span></div>
+      </div>
+    </div>
+
+    <div class="railings-subtypes-quiet">
+      <h2 class="subhead">Materials &amp; Styles</h2>
+      <div class="subtypes-quiet">
+        <span>Wrought Iron</span>
+        <span>Steel</span>
+        <span>PVC or Timber Infill</span>
+        <span>Traditional or Contemporary</span>
+        <span>Driveway Gates</span>
+        <span>Entrance Gates</span>
+        <span>Side Gates</span>
+        <span>Pedestrian Gates</span>
+        <span>Sliding Gates</span>
+        <span>Automated Gates</span>
+        <span>Industrial Gates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAILINGS -->
+<section class="service dark" id="railings">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <h2>Railings</h2>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#010536" stroke-width="2"><path d="M3 20h18M5 20V8M9 20V8M13 20V8M17 20V8M19 20V8M4 8h16"/></svg>
+      </div>
+    </div>
+    <p class="gates-intro-text" style="color:var(--concrete);">Whether for homes, commercial premises, or public spaces, our railings are built to provide lasting safety and support. Using quality materials and precision fabrication, we create solutions that are as dependable as they are attractive.</p>
+
+    <div class="showcase-panel gates-showcase">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/railing_metal_3.jpg" alt="Ornamental black metal footbridge railing over a field">
+      </div>
+      <div class="showcase-copy">
+        <p class="desc">Precision-fabricated railings for stairs, balconies, and decking areas — with wrought iron detailing and finishes built for lasting safety, indoors and out.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/railing_metal_3.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/railing_metal_2.jpg" alt=""></button>
+          <button class="sthumb" data-idx="2"><img src="images/railing_metal_4.jpg" alt=""></button>
+          <button class="sthumb" data-idx="3"><img src="images/railing_pvc_1.jpg" alt=""></button>
+          <button class="sthumb" data-idx="4"><img src="images/railing_metal_5.jpg" alt=""></button>
+          <button class="sthumb" data-idx="5"><img src="images/railing_metal_1.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/railing_metal_3.jpg" alt="Ornamental black metal footbridge railing over a field"></div><span class="gcap">Footbridge railing</span></div>
+        <div class="gcard"><div class="gph"><img src="images/railing_metal_2.jpg" alt="Spear-top wrought iron wall railing outside a bungalow"></div><span class="gcap">Wall railing</span></div>
+        <div class="gcard"><div class="gph"><img src="images/railing_metal_4.jpg" alt="Black metal corner railing on a raised patio step"></div><span class="gcap">Patio railing</span></div>
+        <div class="gcard"><div class="gph"><img src="images/railing_pvc_1.jpg" alt="Dark green composite wall-top fencing above a boundary wall"></div><span class="gcap">Wall-top screening</span></div>
+        <div class="gcard"><div class="gph"><img src="images/railing_metal_5.jpg" alt="Long dark green composite wall-top fencing along a sloped path"></div><span class="gcap">Wall-top fencing</span></div>
+        <div class="gcard"><div class="gph"><img src="images/railing_metal_1.jpg" alt="Green metal and glass balustrade railing on a patio"></div><span class="gcap">Glass balustrade railing</span></div>
+      </div>
+    </div>
+
+    <div class="railings-subtypes-quiet">
+      <h2 class="subhead">Styles</h2>
+      <div class="subtypes-quiet">
+        <span>Wrought Iron</span>
+        <span>Stairs</span>
+        <span>Balconies</span>
+        <span>Decking Areas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTDOOR STRUCTURES -->
+<section class="service light showcase-section" id="outdoor-structures" style="background:var(--concrete);">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <h2>Outdoor Structures</h2>
+        <p class="showcase-intro">Weatherproof structures built to protect and impress — from a single canopy to a full carport.</p>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#010536" stroke-width="2"><path d="M2 9l10-5 10 5M5 9v11M19 9v11M2 9h20"/></svg>
+      </div>
+    </div>
+
+    <div class="showcase-tabs" role="tablist">
+      <a href="#canopies" class="showcase-tab">Canopies</a>
+      <a href="#pergolas" class="showcase-tab">Pergolas</a>
+      <a href="#carports" class="showcase-tab">Carports &amp; Camper Ports</a>
+    </div>
+
+    <div class="showcase-panel" id="canopies">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/carport_1.jpg" alt="Lean-to polycarbonate roof canopy against a house with rooftop and hill view">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--iron);">Canopies</h3>
+        <span class="eyebrow" style="color:var(--gold);">Weather-resistant &amp; built to last</span>
+        <p class="desc" style="color:#3a3d3f;">Built with high-quality, weather-resistant materials designed to withstand the elements while enhancing the look and value of your property. Available in a range of styles, colours, and custom options to suit your home or business.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/carport_1.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/canopy_lean_to_polycarbonate.jpg" alt=""></button>
+          <button class="sthumb" data-idx="2"><img src="images/canopy_patio_walkway.jpg" alt=""></button>
+          <button class="sthumb" data-idx="3"><img src="images/canopy_patio_white.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/carport_1.jpg" alt="Polycarbonate canopy attached to a bungalow"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_lean_to_polycarbonate.jpg" alt="Lean-to polycarbonate roof canopy against a house with rooftop and hill view"></div><span class="gcap">Lean-to polycarbonate canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_patio_walkway.jpg" alt="Long polycarbonate patio canopy running the length of a bungalow"></div><span class="gcap">Patio walkway canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_patio_white.jpg" alt="White polycarbonate patio canopy over a paved seating area with garden furniture"></div><span class="gcap">White patio canopy</span></div>
+      </div>
+    </div>
+
+    <div class="showcase-panel" id="pergolas">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/pergola_1.jpg" alt="Timber-framed pergola with clear roof panels overlooking the fields, with rattan corner sofa and dining table">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--iron);">Pergolas</h3>
+        <span class="eyebrow" style="color:var(--gold);">A stylish outdoor living space</span>
+        <p class="desc" style="color:#3a3d3f;">Create a comfortable, shaded outdoor living area with a bespoke pergola. Combining durable steel framework with retractable covers, glass balustrades and custom finishes, each one is designed to transform your patio or garden into a year-round space to enjoy.</p>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/pergola_1.jpg" alt="Timber-framed pergola with clear roof panels overlooking the fields, with rattan corner sofa and dining table"></div><span class="gcap">Pergola with outdoor dining &amp; lounge area</span></div>
+      </div>
+    </div>
+
+    <div class="showcase-panel" id="carports">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/carport_car_2.jpg" alt="White carport structure sheltering a red car">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--iron);">Carports &amp; Camper Ports</h3>
+        <span class="eyebrow" style="color:var(--gold);">Protect your investment</span>
+        <p class="desc" style="color:#3a3d3f;">Your vehicle is one of your biggest investments — give it the protection it deserves. Designed to shield your car from harsh sun, heavy rain, hail, and falling debris, preserving its appearance and reducing long-term wear.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/carport_car_2.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/canopy_2.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/carport_car_2.jpg" alt="Steel-framed polycarbonate carport sheltering a car beside a house"></div><span class="gcap">Carport canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_2.jpg" alt="White carport structure sheltering a red car"></div><span class="gcap">Carport</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME SOLUTIONS -->
+<section class="service dark showcase-section" id="home-solutions">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <h2>Home Solutions</h2>
+        <p class="showcase-intro">Practical, weatherproof additions for around the home, built to the same standard as everything else we make.</p>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#010536" stroke-width="2"><path d="M3 6h18M6 6v4M18 6v4M2 10h4M18 10h4M8 14l2 2M14 16l2-2M11 18v-3"/></svg>
+      </div>
+    </div>
+
+    <div class="showcase-tabs" role="tablist">
+      <a href="#clotheslines" class="showcase-tab showcase-tab-dark">Clothes Lines</a>
+      <a href="#garden-storage" class="showcase-tab showcase-tab-dark">Garden &amp; Bin Storage</a>
+    </div>
+
+    <div class="showcase-panel" id="clotheslines">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/clothesline_two_tier_mobile.jpg" alt="Two-tier galvanised mobile clothesline rack on wheels in a garden">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--paper);">Clothes Lines</h3>
+        <span class="eyebrow">Low-maintenance &amp; energy-saving</span>
+        <p class="desc">Whether you have a compact garden or a large outdoor area, we create clotheslines to suit your specific needs — a low-maintenance, cost-effective and energy-saving alternative to tumble dryers.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/clothesline_two_tier_mobile.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/clothesline_1.jpg" alt=""></button>
+          <button class="sthumb" data-idx="2"><img src="images/clothesline_mobile_1.jpg" alt=""></button>
+          <button class="sthumb" data-idx="3"><img src="images/canopy_1.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/clothesline_two_tier_mobile.jpg" alt="Two-tier galvanised mobile clothesline rack on wheels in a garden"></div><span class="gcap">Two-tier mobile clothes line</span></div>
+        <div class="gcard"><div class="gph"><img src="images/clothesline_1.jpg" alt="Galvanised T-shape clothesline pole installed in a garden"></div><span class="gcap">T-shape line</span></div>
+        <div class="gcard"><div class="gph"><img src="images/clothesline_mobile_1.jpg" alt="Mobile rolling clothesline unit on wheels"></div><span class="gcap">Mobile clothes line</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_1.jpg" alt="Lean-to polycarbonate canopy over a side walkway"></div><span class="gcap">Walkway canopy</span></div>
+      </div>
+    </div>
+
+    <div class="showcase-panel" id="garden-storage">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/garden_storage_2.jpg" alt="Timber-clad steel garden storage unit">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--paper);">Garden &amp; Bin Storage</h3>
+        <span class="eyebrow">Neat, secure, weatherproof</span>
+        <p class="desc">Keep your outdoor space organised and ready for every season. Bins, tools, bicycles, cushions or toys — our storage units provide a secure, weather-resistant place for everything, with easy access and smart use of space.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/garden_storage_2.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/garden_storage_1.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/garden_storage_2.jpg" alt="Timber-clad steel garden storage unit"></div><span class="gcap">Garden storage unit</span></div>
+        <div class="gcard"><div class="gph"><img src="images/garden_storage_1.jpg" alt="Steel-framed timber bin storage enclosure"></div><span class="gcap">Bin storage enclosure</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL -->
+<section class="service light showcase-section" id="commercial" style="background:var(--concrete);">
+  <div class="wrap">
+    <div class="service-head">
+      <div>
+        <h2>Commercial &amp; Custom Fabrication</h2>
+        <p class="showcase-intro" style="color:#3a3d3f;">Bespoke metal solutions for retail, hospitality and industrial projects of any scale.</p>
+      </div>
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#010536" stroke-width="2"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>
+      </div>
+    </div>
+
+    <div class="showcase-tabs" role="tablist">
+      <a href="#retail-fitouts" class="showcase-tab">Retail &amp; Fit-Outs</a>
+      <a href="#bike-storage" class="showcase-tab">Commercial Bike Storage</a>
+      <a href="#signage-structures" class="showcase-tab">Signage &amp; Structures</a>
+    </div>
+
+    <div class="showcase-panel" id="retail-fitouts">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/commercial_deli_display.jpg" alt="Stainless steel-framed refrigerated deli and butcher display counter in a shop">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--iron);">Retail &amp; Fit-Outs</h3>
+        <span class="eyebrow" style="color:var(--gold);">Bespoke by design</span>
+        <p class="desc" style="color:#3a3d3f;">Custom steel-framed fixtures and fittings, designed and built to match the space — from shopfloor shelving to structural fit-out work.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/commercial_deli_display.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/misc_2.jpg" alt=""></button>
+          <button class="sthumb" data-idx="2"><img src="images/railinggas.jpg" alt=""></button>
+          <button class="sthumb" data-idx="3"><img src="images/commercial_galvanised_gate.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/commercial_deli_display.jpg" alt="Stainless steel-framed refrigerated deli and butcher display counter in a shop"></div><span class="gcap">Retail deli display counter</span></div>
+        <div class="gcard"><div class="gph"><img src="images/misc_2.jpg" alt="Custom steel-framed retail shelving unit"></div><span class="gcap">Retail shelving</span></div>
+        <div class="gcard"><div class="gph"><img src="images/railinggas.jpg" alt="Custom Gas Railing Protector"></div><span class="gcap">Custom Gas Railing Protector</span></div>
+        <div class="gcard"><div class="gph"><img src="images/commercial_galvanised_gate.jpg" alt="Large galvanised steel sliding gate at a farmyard entrance"></div><span class="gcap">Galvanised steel yard gate</span></div>
+      </div>
+    </div>
+
+    <div class="showcase-panel" id="bike-storage">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/bike_storage_1.jpg" alt="Commercial bike storage shelter">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--iron);">Commercial Bike Storage Shelter</h3>
+        <span class="eyebrow" style="color:var(--gold);">Secure, weatherproof cycle parking</span>
+        <p class="desc" style="color:#3a3d3f;">Galvanised steel-framed cycle shelters built for schools, apartments and workplaces — secure, weather-resistant parking that encourages cycling and keeps bikes protected all year round.</p>
+        <div class="showcase-thumbs">
+          <button class="sthumb active" data-idx="0"><img src="images/bike_storage_1.jpg" alt=""></button>
+          <button class="sthumb" data-idx="1"><img src="images/bike_storage_2.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/bike_storage_1.jpg" alt="Commercial bike storage shelter"></div><span class="gcap">Bike storage shelter</span></div>
+        <div class="gcard"><div class="gph"><img src="images/bike_storage_2.jpg" alt="Galvanised steel bike shelter with polycarbonate roof and cycle racks"></div><span class="gcap">Bike shelter with cycle racks</span></div>
+      </div>
+    </div>
+
+    <div class="showcase-panel" id="signage-structures">
+      <div class="showcase-photo">
+        <img class="showcase-img" src="images/commercial_gaa_scoreboard.jpg" alt="Large steel-framed GAA scoreboard structure sponsored by Blackwater Motors">
+      </div>
+      <div class="showcase-copy">
+        <h3 class="showcase-title" style="color:var(--iron);">Signage &amp; Structures</h3>
+        <span class="eyebrow" style="color:var(--gold);">Built for clubs, sponsors &amp; public spaces</span>
+        <p class="desc" style="color:#3a3d3f;">Large-scale steel structures for sports grounds, sponsors and public spaces — from scoreboard gantries to freestanding signage, engineered to stand up to the elements for the long haul.</p>
+      </div>
+      <div class="gallery showcase-hidden-gallery">
+        <div class="gcard"><div class="gph"><img src="images/commercial_gaa_scoreboard.jpg" alt="Large steel-framed GAA scoreboard structure sponsored by Blackwater Motors"></div><span class="gcap">Fermoy GAA scoreboard gantry</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-content">
+    <span class="eyebrow">Since 1988</span>
+    <h2>Two generations of Cork craftsmanship</h2>
+    <p>Family-run since 1988, Grange Ironcraft is Fermoy, Co. Cork's trusted name in custom metal fabrication — from one-off residential pieces to complex commercial structures, built to last and designed to impress.</p>
+    <div class="about-stats">
+      <div class="stat"><b>1988</b><span>Est. in Fermoy</span></div>
+      <div class="stat"><b>2</b><span>Generations at the forge</span></div>
+      <div class="stat"><b>100%</b><span>Made to measure</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--gold);">Get In Touch</span>
+      <h2>Let's build something that lasts</h2>
+      <p>Tell us about your project — a gate, a railing, a carport, or something entirely bespoke — and we'll get back to you with a quote.</p>
+
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Fermoy, Co. Cork, Ireland</span>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v2c0 1-1 2-2 2C10.5 21 3 13.5 3 6.99Z"/></svg>
+        <a href="tel:+353831376710">083 137 6710</a>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6"/></svg>
+        <a href="mailto:grangeirconcraftltd@gamil.com">grangeirconcraftltd@gamil.com</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://facebook.com/grangeironcraft" target="_blank" rel="noopener" aria-label="Grange Ironcraft on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+        </a>
+        <a href="https://instagram.com/grangeironcraft" target="_blank" rel="noopener" aria-label="Grange Ironcraft on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <form class="cform" onsubmit="event.preventDefault(); window.location.href='mailto:grangeirconcraftltd@gamil.com?subject=Website enquiry from ' + encodeURIComponent(document.getElementById('cf-name').value) + '&body=' + encodeURIComponent(document.getElementById('cf-message').value + ' \n\nFrom: ' + document.getElementById('cf-name').value + ' (' + document.getElementById('cf-email').value + ')');">
+      <label for="cf-name">Name</label>
+      <input id="cf-name" type="text" placeholder="Your name" required>
+      <label for="cf-email">Email</label>
+      <input id="cf-email" type="email" placeholder="you@example.com" required>
+      <label for="cf-message">Project details</label>
+      <textarea id="cf-message" rows="5" placeholder="Tell us what you're looking to have made..." required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<div class="site-footer">
+  <div class="wrap">
+    <footer>
+      <span>&copy; 2026 Grange Ironcraft Ltd &middot; Fermoy, Co. Cork</span>
+      <span>Est. 1988 &middot; Family Run</span>
+    </footer>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <p class="lightbox-cap" id="lightboxCap"></p>
+  </div>
+</div>
+
+<script>
+  const navtoggle = document.getElementById('navtoggle');
+  const navlinks = document.getElementById('navlinks');
+  navtoggle.addEventListener('click', () => {
+    const isOpen = navlinks.classList.toggle('open');
+    navtoggle.classList.toggle('open', isOpen);
+    navtoggle.setAttribute('aria-expanded', isOpen);
+  });
+  navlinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      navtoggle.classList.remove('open');
+      navtoggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCap = document.getElementById('lightboxCap');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  let currentGroup = [];
+  let currentIndex = 0;
+
+  function showSlide(index){
+    const total = currentGroup.length;
+    currentIndex = (index + total) % total;
+    const card = currentGroup[currentIndex];
+    const img = card.querySelector('img');
+    const cap = card.querySelector('.gcap');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
+    lightboxCap.textContent = cap ? cap.textContent : '';
+    const showNav = total > 1;
+    lightboxPrev.style.display = showNav ? 'flex' : 'none';
+    lightboxNext.style.display = showNav ? 'flex' : 'none';
+  }
+
+  function openLightbox(card){
+    const gallery = card.closest('.gallery');
+    currentGroup = gallery ? Array.from(gallery.querySelectorAll('.gcard')) : [card];
+    const startIndex = currentGroup.indexOf(card);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    showSlide(startIndex);
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.gcard').forEach(card => {
+    card.addEventListener('click', () => openLightbox(card));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => showSlide(currentIndex - 1));
+  lightboxNext.addEventListener('click', () => showSlide(currentIndex + 1));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+    if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+  });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, {passive:true});
+  lightbox.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    const dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) showSlide(currentIndex + 1);
+      else showSlide(currentIndex - 1);
+    }
+  }, {passive:true});
+
+  const stripTrack = document.getElementById('stripTrack');
+  const stripPrev = document.getElementById('stripPrev');
+  const stripNext = document.getElementById('stripNext');
+  if (stripTrack && stripPrev && stripNext) {
+    const step = () => Math.round(stripTrack.clientWidth * 0.7);
+    stripPrev.addEventListener('click', () => stripTrack.scrollBy({left:-step(), behavior:'smooth'}));
+    stripNext.addEventListener('click', () => stripTrack.scrollBy({left:step(), behavior:'smooth'}));
+  }
+
+  document.querySelectorAll('.showcase-panel').forEach(panel => {
+    const mainImg = panel.querySelector('.showcase-img');
+    const thumbs = panel.querySelectorAll('.sthumb');
+    const hiddenCards = panel.querySelectorAll('.showcase-hidden-gallery .gcard');
+    let activeIdx = 0;
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const idx = parseInt(thumb.dataset.idx, 10);
+        activeIdx = idx;
+        thumbs.forEach(t => t.classList.toggle('active', t === thumb));
+        if (window.matchMedia('(max-width:860px)').matches) {
+          if (hiddenCards[idx]) hiddenCards[idx].click();
+          return;
+        }
+        const hiddenImg = hiddenCards[idx].querySelector('img');
+        mainImg.src = hiddenImg.src;
+        mainImg.alt = hiddenImg.alt;
+      });
+    });
+
+    if (mainImg) {
+      mainImg.addEventListener('click', () => {
+        if (hiddenCards[activeIdx]) hiddenCards[activeIdx].click();
+      });
+    }
+  });
+</script>
+</body>
+</html>
