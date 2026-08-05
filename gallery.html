@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Photo Gallery | Grange Ironcraft</title>
+<meta name="description" content="Browse our full gallery of gates, canopies and carports installed across Cork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --iron:#010536;
+    --concrete:#EDEDF2;
+    --ember:#FFFF00;
+    --ember-bright:#FFF680;
+    --gold:#8A6D00;
+    --steel:#8891A8;
+    --steel-dark:#4A5170;
+    --paper:#FFFFFF;
+    --line-dark:rgba(1,5,54,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:'Source Sans 3', sans-serif; background:var(--concrete); color:var(--iron);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  a{color:inherit;}
+
+  .gback{
+    background:var(--iron); padding:18px 0;
+  }
+  .gback .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .gback a{
+    color:var(--paper); text-decoration:none; font-weight:600; font-size:0.92rem;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .gback a:hover{color:var(--ember);}
+  .gback span{color:var(--steel); font-size:0.82rem;}
+
+  .ghero{padding:48px 0 24px;}
+  .ghero h1{font-family:'Oswald', sans-serif; font-size:clamp(1.8rem,4vw,2.6rem); margin:0 0 10px; font-weight:600;}
+  .ghero p{color:#3a3d3f; max-width:60ch; margin:0; font-size:1rem; line-height:1.5;}
+
+  .gjump{display:flex; gap:10px; padding:0 0 32px; flex-wrap:wrap;}
+  .gjump a{
+    text-decoration:none; font-weight:600; font-size:0.85rem; padding:9px 20px;
+    border-radius:100px; border:1px solid var(--line-dark); background:var(--paper); color:var(--iron);
+  }
+  .gjump a:hover{border-color:var(--ember); background:var(--ember);}
+
+  .gsection{padding:20px 0 48px;}
+  .gsection h2{font-family:'Oswald', sans-serif; font-size:1.6rem; margin:0 0 4px; font-weight:600; scroll-margin-top:24px;}
+  .gsection .gcount{color:var(--steel-dark); font-size:0.85rem; margin:0 0 20px;}
+
+  .ggrid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+  }
+  @media (min-width:640px){ .ggrid{grid-template-columns:repeat(4,1fr);} }
+  @media (min-width:960px){ .ggrid{grid-template-columns:repeat(6,1fr);} }
+
+  .gcard{cursor:pointer;}
+  .gph{border-radius:10px; overflow:hidden; aspect-ratio:1/1; margin-bottom:6px;}
+  .gph img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
+  .gcard:hover .gph img{transform:scale(1.06);}
+  .gcap{display:block; font-size:0.76rem; color:var(--steel-dark); padding:0 2px;}
+
+  /* ---------- lightbox (matches main site) ---------- */
+  .lightbox{
+    display:none; position:fixed; inset:0; background:rgba(1,5,54,0.94); z-index:999;
+    align-items:center; justify-content:center; padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-inner{position:relative; max-width:min(1100px, 92vw); max-height:88vh;}
+  .lightbox-inner img{max-width:100%; max-height:80vh; display:block; margin:0 auto; border-radius:6px;}
+  .lightbox-cap{color:var(--paper); text-align:center; margin-top:14px; font-size:0.95rem;}
+  .lightbox-close{
+    position:absolute; top:-40px; right:0; width:34px; height:34px; color:var(--paper);
+    cursor:pointer; background:none; border:none; padding:0;
+  }
+  .lightbox-close svg{width:100%; height:100%;}
+  .lightbox-close:hover{color:var(--ember);}
+  .lightbox-nav{
+    position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px;
+    border-radius:50%; background:rgba(1,5,54,0.6); color:var(--paper); border:none;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+  .lightbox-nav:hover{background:rgba(1,5,54,0.85); color:var(--ember);}
+  .lightbox-nav svg{width:100%; height:100%; padding:10px;}
+  .lightbox-prev{left:-64px;}
+  .lightbox-next{right:-64px;}
+  @media (max-width:900px){
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
+  }
+  @media (max-width:600px){
+    .lightbox{padding:20px;}
+    .lightbox-close{top:-40px; right:0; width:30px; height:30px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="gback">
+  <div class="wrap">
+    <a href="index.html">&larr; Back to grangeironcraft.ie</a>
+    <span>Grange Ironcraft</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="ghero">
+    <h1>Full Photo Gallery</h1>
+    <p>Browse our complete collection of gates, canopies and carports installed across Cork over the years.</p>
+  </div>
+  <div class="gjump">
+    <a href="#gates">Gates (47)</a>
+    <a href="#canopies">Canopies &amp; Carports (81)</a>
+  </div>
+
+  <div class="gsection" id="gates">
+    <h2>Gates</h2>
+    <p class="gcount">47 photos</p>
+    <div class="gallery ggrid">
+        <div class="gcard"><div class="gph"><img src="images/gates4.jpg" alt="Large sliding driveway gate with laser-cut dog silhouette panels" loading="lazy"></div><span class="gcap">Large sliding gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_ornate_double.jpg" alt="Ornate wrought iron double driveway gate with circle scrollwork and spear finials" loading="lazy"></div><span class="gcap">Ornate double driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates-hero-desktop.webp" alt="Featured driveway gate installation, as shown in the homepage hero image" loading="lazy"></div><span class="gcap">Curved driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_6.jpg" alt="Composite double gate with ornamental wrought iron scroll cresting" loading="lazy"></div><span class="gcap">Scroll-top double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_8.jpg" alt="Anthracite composite side gate in a narrow passage between houses" loading="lazy"></div><span class="gcap">Side pedestrian gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_3.jpg" alt="Front garden gate with matching charcoal wall panels" loading="lazy"></div><span class="gcap">Front garden gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_2.jpg" alt="Dark composite side entrance gate between two houses" loading="lazy"></div><span class="gcap">Side entrance gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_7.jpg" alt="Teal composite sliding gate set between stone pillars" loading="lazy"></div><span class="gcap">Teal driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_9.jpg" alt="Dark grey composite sliding gate on a paved driveway" loading="lazy"></div><span class="gcap">Sliding driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_10.jpg" alt="Navy composite double gate in a side passage" loading="lazy"></div><span class="gcap">Navy side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_side_dark_composite.jpg" alt="Dark composite side gate in a narrow passage against a pebble-dash wall" loading="lazy"></div><span class="gcap">Side passage gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_wrought_1.jpg" alt="Grange Ironcraft delivery truck at the workshop" loading="lazy"></div><span class="gcap">From our workshop in Fermoy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_timber_double.jpg" alt="Curved timber double driveway gate with dark steel frame between concrete pillars" loading="lazy"></div><span class="gcap">Timber double driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_timber_side.jpg" alt="Arched timber side gate against a pebble-dash wall" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_01.jpg" alt="Timber side gate beside a stone wall with pergola" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_02.jpg" alt="Orange-stained timber double gate" loading="lazy"></div><span class="gcap">Timber double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_03.jpg" alt="Narrow timber side gate between a pillar and hedge" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_04.jpg" alt="Scalloped-top timber gate under a pergola walkway" loading="lazy"></div><span class="gcap">Scalloped-top timber gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_05.jpg" alt="Orange-stained timber double gate" loading="lazy"></div><span class="gcap">Timber double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_06.jpg" alt="Red-stained scalloped double timber gate" loading="lazy"></div><span class="gcap">Red scalloped double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_07.jpg" alt="Green scalloped picket-style timber fence" loading="lazy"></div><span class="gcap">Scalloped timber fence</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_08.jpg" alt="Dark stained tall timber single gate" loading="lazy"></div><span class="gcap">Timber single gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_09.jpg" alt="Tan timber double gate on a driveway" loading="lazy"></div><span class="gcap">Timber double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_10.jpg" alt="Diamond-panel timber double gate" loading="lazy"></div><span class="gcap">Diamond-panel double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_11.jpg" alt="Narrow tall timber gate between two houses" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_12.jpg" alt="Narrow timber gate beside a metal railing" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_13.jpg" alt="Wide scalloped timber double driveway gate" loading="lazy"></div><span class="gcap">Scalloped double driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_14.jpg" alt="Tall panel timber double gate on a driveway" loading="lazy"></div><span class="gcap">Timber double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_15.jpg" alt="Timber gate matching a garden wall" loading="lazy"></div><span class="gcap">Timber garden gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_16.jpg" alt="Arched timber double driveway gate in a countryside setting" loading="lazy"></div><span class="gcap">Arched double driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_17.jpg" alt="Single wide timber gate along a hedge-lined driveway" loading="lazy"></div><span class="gcap">Timber driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_18.jpg" alt="Dark timber double gate on a gravel driveway" loading="lazy"></div><span class="gcap">Timber double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_19.jpg" alt="Arched timber double gate beside a brick wall" loading="lazy"></div><span class="gcap">Arched double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_20.jpg" alt="Post and rail timber fencing along a road" loading="lazy"></div><span class="gcap">Post and rail fencing</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_21.jpg" alt="Timber side gate with climbing roses" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_22.jpg" alt="Timber side gate beside garden shrubs" loading="lazy"></div><span class="gcap">Timber side gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_23.jpg" alt="Single timber gate with decorative diamond detail" loading="lazy"></div><span class="gcap">Timber single gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_24.jpg" alt="Diamond-panel timber double gate on a gravel driveway" loading="lazy"></div><span class="gcap">Diamond-panel double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_25.jpg" alt="Timber gate matching an adjoining fence panel" loading="lazy"></div><span class="gcap">Timber gate &amp;amp; fence</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_26.jpg" alt="Single timber driveway gate on a hillside property" loading="lazy"></div><span class="gcap">Timber driveway gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_27.jpg" alt="Arched timber gate between cream pillars" loading="lazy"></div><span class="gcap">Arched timber gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_28.jpg" alt="Close-up of an arched timber gate steel frame" loading="lazy"></div><span class="gcap">Arched gate detail</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_29.jpg" alt="Scalloped timber double gate at a house entrance" loading="lazy"></div><span class="gcap">Scalloped double gate</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_30.jpg" alt="Vertical slat timber fence panel against a wall" loading="lazy"></div><span class="gcap">Timber fence panel</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_31.jpg" alt="Timber fencing along a new housing estate road" loading="lazy"></div><span class="gcap">Timber fencing</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_32.jpg" alt="New pale timber fence panels on a patio" loading="lazy"></div><span class="gcap">Timber fence panels</span></div>
+        <div class="gcard"><div class="gph"><img src="images/gates_scrape_33.jpg" alt="Wide timber double gate on a driveway" loading="lazy"></div><span class="gcap">Timber double gate</span></div>
+    </div>
+  </div>
+
+  <div class="gsection" id="canopies">
+    <h2>Canopies &amp; Carports</h2>
+    <p class="gcount">81 photos</p>
+    <div class="gallery ggrid">
+        <div class="gcard"><div class="gph"><img src="images/carport_1.jpg" alt="Polycarbonate canopy attached to a bungalow" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_lean_to_polycarbonate.jpg" alt="Lean-to polycarbonate roof canopy against a house with rooftop and hill view" loading="lazy"></div><span class="gcap">Lean-to polycarbonate canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_patio_walkway.jpg" alt="Long polycarbonate patio canopy running the length of a bungalow" loading="lazy"></div><span class="gcap">Patio walkway canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_patio_white.jpg" alt="White polycarbonate patio canopy over a paved seating area with garden furniture" loading="lazy"></div><span class="gcap">White patio canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_2.jpg" alt="White carport structure sheltering a red car" loading="lazy"></div><span class="gcap">Carport</span></div>
+        <div class="gcard"><div class="gph"><img src="images/carport_car_2.jpg" alt="Steel-framed polycarbonate carport sheltering a car beside a house" loading="lazy"></div><span class="gcap">Carport canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_01.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_02.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_03.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_04.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_05.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_06.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_07.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_08.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_09.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_10.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_11.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_12.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_13.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_14.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_15.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_16.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_17.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_18.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_19.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_20.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_21.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_22.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_23.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_24.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_25.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_26.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_27.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_28.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_29.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_30.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_31.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_32.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_33.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_34.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_35.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_36.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_37.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_38.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_39.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_40.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_41.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_42.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_43.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_44.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_45.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_46.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_47.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_48.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_49.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_50.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_51.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_52.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_53.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_54.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_55.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_56.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_57.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_58.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_59.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_60.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_61.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_62.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_63.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_64.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_65.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_66.jpg" alt="Camper port installation" loading="lazy"></div><span class="gcap">Camper port installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_67.jpg" alt="Polycarbonate canopy over a patio" loading="lazy"></div><span class="gcap">Polycarbonate canopy over a patio</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_68.jpg" alt="Carport installation" loading="lazy"></div><span class="gcap">Carport installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_69.jpg" alt="Canopy over a side entrance" loading="lazy"></div><span class="gcap">Canopy over a side entrance</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_70.jpg" alt="Canopy over an outdoor seating area" loading="lazy"></div><span class="gcap">Canopy over an outdoor seating area</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_71.jpg" alt="Polycarbonate canopy installation" loading="lazy"></div><span class="gcap">Polycarbonate canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_72.jpg" alt="Carport with polycarbonate roof" loading="lazy"></div><span class="gcap">Carport with polycarbonate roof</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_73.jpg" alt="Patio canopy installation" loading="lazy"></div><span class="gcap">Patio canopy installation</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_74.jpg" alt="Wall-mounted canopy" loading="lazy"></div><span class="gcap">Wall-mounted canopy</span></div>
+        <div class="gcard"><div class="gph"><img src="images/canopy_scrape_75.jpg" alt="Carport sheltering a car" loading="lazy"></div><span class="gcap">Carport sheltering a car</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox-cap" id="lightboxCap"></div>
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCap = document.getElementById('lightboxCap');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  let currentGroup = [];
+  let currentIndex = 0;
+
+  function showSlide(index){
+    if (!currentGroup.length) return;
+    currentIndex = (index + currentGroup.length) % currentGroup.length;
+    const card = currentGroup[currentIndex];
+    const img = card.querySelector('img');
+    const capEl = card.querySelector('.gcap');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
+    lightboxCap.textContent = capEl ? capEl.textContent : '';
+    const showNav = currentGroup.length > 1;
+    lightboxPrev.style.display = showNav ? 'flex' : 'none';
+    lightboxNext.style.display = showNav ? 'flex' : 'none';
+  }
+
+  function openLightbox(card){
+    const gallery = card.closest('.gallery');
+    currentGroup = gallery ? Array.from(gallery.querySelectorAll('.gcard')) : [card];
+    const startIndex = currentGroup.indexOf(card);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    showSlide(startIndex);
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.gcard').forEach(card => {
+    card.addEventListener('click', () => openLightbox(card));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => showSlide(currentIndex - 1));
+  lightboxNext.addEventListener('click', () => showSlide(currentIndex + 1));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+    if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+  });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, {passive:true});
+  lightbox.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    const dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) showSlide(currentIndex + 1);
+      else showSlide(currentIndex - 1);
+    }
+  }, {passive:true});
+</script>
+
+</body>
+</html>
